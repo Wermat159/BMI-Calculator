@@ -6,7 +6,7 @@ Check your Java version by typing in
 `java -version`
 If you get the following
 `java 11.0.3 YYYY-DD-MM`
-or any version greater than or equal to 11.0.3, this script has been tested and confirmed to be supported.
+or any version greater than or equal to 11.0.3, this program has been tested and confirmed to be supported.
 
 ## Features
 
