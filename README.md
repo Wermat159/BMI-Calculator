@@ -1,7 +1,7 @@
 # BMI-Calculator
 
 ## Compatibility
-Check your Python version by typing in
+Check your Java version by typing in
 `java --version` or
 `java -version`
 If you get the following
