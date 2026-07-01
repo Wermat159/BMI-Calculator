@@ -38,17 +38,25 @@ public class BMICalculator extends Window implements ActionListener {
 	}
 
 	// check all conditions so we get no errors
-	private static boolean checker(JTextField Weight, JTextField Height) throws NumberFormatException {
+	private static boolean checker(JTextField Weight, JTextField Height) {
+		try {
+			String weightText = Weight.getText().trim();
+			String heightText = Height.getText().trim();
 
-		if (Weight.getText().isBlank() && Weight.getText().isEmpty()) {
-			return false;
-		} else if (Height.getText().matches("\\d+") == false) {
-			return false;
-		} else if ((Double.parseDouble(Weight.getText()) < 0) && (Double.parseDouble(Weight.getText()) > 999)
-				&& (Double.parseDouble(Height.getText()) < 0) && (Double.parseDouble(Height.getText()) > 250)) {
+			if (weightText.isEmpty() || heightText.isEmpty()) {
+				return false;
+			}
+
+			double weight = Double.parseDouble(weightText);
+			double height = Double.parseDouble(heightText);
+
+			if (weight < 0 || weight > 999 || height <= 0 || height > 250) {
+				return false;
+			}
+			return true;
+		} catch (NumberFormatException e) {
 			return false;
 		}
-		return true;
 	}
 
 	// calculates BMI if there are all necessary requirements are met
